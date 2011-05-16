@@ -49,7 +49,7 @@ av_cold void ff_fft_init_arm(FFTContext *s)
     }
 }
 
-#if CONFIG_RDFT
+#if CONFIG_RDFT || defined(ANDROID)
 av_cold void ff_rdft_init_arm(RDFTContext *s)
 {
     if (HAVE_NEON)
@@ -57,7 +57,7 @@ av_cold void ff_rdft_init_arm(RDFTContext *s)
 }
 #endif
 
-#if CONFIG_DCA_DECODER
+#if CONFIG_DCA_DECODER || defined(ANDROID)
 av_cold void ff_synth_filter_init_arm(SynthFilterContext *s)
 {
     if (HAVE_NEON)

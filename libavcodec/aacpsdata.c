@@ -19,6 +19,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#include <stdint.h>
+
 static const uint8_t huff_iid_df1_bits[] = {
     18, 18, 18, 18, 18, 18, 18, 18, 18, 17, 18, 17, 17, 16, 16, 15, 14, 14,
     13, 12, 12, 11, 10, 10,  8,  7,  6,  5,  4,  3,  1,  3,  4,  5,  6,  7,

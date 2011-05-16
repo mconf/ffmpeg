@@ -58,42 +58,42 @@
 #define log2f(x) ((float)log2(x))
 #endif /* HAVE_LOG2F */
 
-#if !HAVE_LRINT
+#if !HAVE_LRINT && !defined(ANDROID)
 static av_always_inline av_const long int lrint(double x)
 {
     return rint(x);
 }
 #endif /* HAVE_LRINT */
 
-#if !HAVE_LRINTF
+#if !HAVE_LRINTF && !defined(ANDROID)
 static av_always_inline av_const long int lrintf(float x)
 {
     return (int)(rint(x));
 }
 #endif /* HAVE_LRINTF */
 
-#if !HAVE_ROUND
+#if !HAVE_ROUND && !defined(ANDROID)
 static av_always_inline av_const double round(double x)
 {
     return (x > 0) ? floor(x + 0.5) : ceil(x - 0.5);
 }
 #endif /* HAVE_ROUND */
 
-#if !HAVE_ROUNDF
+#if !HAVE_ROUNDF && !defined(ANDROID)
 static av_always_inline av_const float roundf(float x)
 {
     return (x > 0) ? floor(x + 0.5) : ceil(x - 0.5);
 }
 #endif /* HAVE_ROUNDF */
 
-#if !HAVE_TRUNC
+#if !HAVE_TRUNC && !defined(ANDROID)
 static av_always_inline av_const double trunc(double x)
 {
     return (x > 0) ? floor(x) : ceil(x);
 }
 #endif /* HAVE_TRUNC */
 
-#if !HAVE_TRUNCF
+#if !HAVE_TRUNCF && !defined(ANDROID)
 static av_always_inline av_const float truncf(float x)
 {
     return (x > 0) ? floor(x) : ceil(x);

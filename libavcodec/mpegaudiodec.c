@@ -1155,7 +1155,7 @@ static void switch_buffer(MPADecodeContext *s, int *pos, int *end_pos, int *end_
                 v = -v;
             *dst = v;
 */
-#if CONFIG_FLOAT
+#if CONFIG_FLOAT || defined(ANDROID)
 #define READ_FLIP_SIGN(dst,src)\
             v = AV_RN32A(src) ^ (get_bits1(&s->gb)<<31);\
             AV_WN32A(dst, v);
